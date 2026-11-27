@@ -3,7 +3,7 @@
 English | [简体中文](README_zh-CN.md)
 
 **Spectral-Constrained Robust Aggregation for Secure LoRA-Based Federated Learning**
-KDD 2027 · [Paper](https://openreview.net/forum?id=YCna6pqYJk)
+KDD 2027
 
 FedSCAN is a two-stage server-side aggregator for LoRA-based federated learning. Stage I estimates a robust update through iterative client reweighting. Stage II clips blockwise singular values before applying the aggregated update. The framework includes CLIP-LoRA for image-text retrieval and ViT-LoRA for image classification.
 

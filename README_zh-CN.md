@@ -4,7 +4,7 @@
 
 **Spectral-Constrained Robust Aggregation for Secure LoRA-Based Federated Learning**  
 **面向安全 LoRA 联邦学习的谱约束鲁棒聚合**  
-KDD 2027 · [论文](https://openreview.net/forum?id=YCna6pqYJk)
+KDD 2027
 
 FedSCAN 是面向 LoRA 联邦学习的两阶段服务器端聚合方法。Stage I 通过迭代客户端重加权估计鲁棒更新；Stage II 对各矩阵块的奇异值进行裁剪，再应用聚合更新。项目包含用于图文检索的 CLIP-LoRA 和用于图像分类的 ViT-LoRA。
 
