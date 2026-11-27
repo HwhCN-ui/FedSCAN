@@ -23,6 +23,8 @@ FedSCAN 是面向 LoRA 联邦学习的两阶段服务器端聚合方法。Stage 
 
 本仓库不包含攻击实现、实验启动脚本、数据集、模型权重、检查点或实验日志。
 
+出于安全考虑，为降低攻击代码被滥用的风险，本仓库不公开攻击实现。
+
 ## 安装
 
 需要 Python 3.10 或更高版本。
@@ -32,23 +34,11 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## 接口
+## 联系方式
 
-核心入口为 `fedscan.FedSCANAggregator`。`aggregate` 接收由“参数名到张量”的字典组成的客户端更新列表，返回聚合更新和指标。`stage_mode` 取 1、2、3 时，分别使用完整方法、仅 Stage I、平均聚合后进行谱裁剪。
+胡文晗（Wenhan Hu）
 
-默认参数位于 `fedscan/config/fedscan_config.py`。当前实现通过 `aggregate(..., is_init_benign=True, clean_updates=...)` 初始化并保存谱统计量；良性客户端服务器在配置的首轮完成该初始化。
-
-`fedscan.core.federated_server.FederatedServer` 提供训练接口。创建服务器前需设置数据路径和配置；导入模块不会自动启动训练。
-
-## 数据
-
-`datasets/flickr30k/`、`datasets/coco/`、`datasets/tiny-imagenet/` 和 `datasets/cifar100/` 保留下载脚本，使用 `bash` 调用，仓库不附带数据。现有 COCO 脚本只下载标注，图像需另行准备。模型下载脚本位于 `datasets/google/` 和 `datasets/openai/`。CIFAR-100 和 ViT 下载脚本使用 ModelScope，可通过以下命令安装可选下载依赖：
-
-```bash
-pip install -e '.[downloads]'
-```
-
-训练 JSON 将 `client_1`、`client_2` 等客户端标识映射到样本列表，验证 JSON 使用 `val_data`。检索样本包含 `img_path` 和 `text`，分类样本包含 `img_path` 和 `label`。准备好的 JSON 放入 `datasets/data_cache/`，预训练模型路径在 `fedscan/config/base_config.py` 中配置。
+邮箱：[huwh25@mails.jlu.edu.cn](mailto:huwh25@mails.jlu.edu.cn)
 
 ## 引用
 

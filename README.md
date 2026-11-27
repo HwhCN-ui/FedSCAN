@@ -22,6 +22,8 @@ FedSCAN is a two-stage server-side aggregator for LoRA-based federated learning.
 
 The release excludes attack implementations, experiment launchers, datasets, checkpoints, and experimental logs.
 
+For security reasons and to reduce the risk of misuse, attack implementations are not publicly released.
+
 ## Installation
 
 Python 3.10 or later is required.
@@ -30,19 +32,11 @@ Python 3.10 or later is required.
 
 `pip install -e .`
 
-## Interface
+## Contact
 
-The core entry point is `fedscan.FedSCANAggregator`. Its `aggregate` method accepts a list of parameter-name-to-tensor dictionaries and returns the aggregated update and metrics. Stage modes 1, 2, and 3 select the full method, Stage I only, and averaging followed by spectral clipping.
+Wenhan Hu (胡文晗)
 
-Defaults are configured in `fedscan/config/fedscan_config.py`. The supplied implementation initializes stored spectral statistics through `aggregate(..., is_init_benign=True, clean_updates=...)`. The clean-client server performs this initialization in its configured first round.
-
-`fedscan.core.federated_server.FederatedServer` provides the training interface. Set dataset paths and configuration values before constructing it; no training is launched on import.
-
-## Data
-
-Download scripts are retained under `datasets/flickr30k/`, `datasets/coco/`, `datasets/tiny-imagenet/`, and `datasets/cifar100/`. Invoke them with `bash`; no data are bundled. The existing COCO script downloads annotations only; place the images separately. Model download helpers are under `datasets/google/` and `datasets/openai/`. The CIFAR-100 and ViT helpers use ModelScope; install the optional download dependencies with `pip install -e '.[downloads]'`.
-
-Training JSON maps `client_1`, `client_2`, and subsequent client identifiers to sample lists. Validation JSON uses `val_data`. Retrieval samples contain `img_path` and `text`; classification samples contain `img_path` and `label`. Store prepared JSON files in `datasets/data_cache/` and configure pretrained-model locations in `fedscan/config/base_config.py`.
+Email: [huwh25@mails.jlu.edu.cn](mailto:huwh25@mails.jlu.edu.cn)
 
 ## Citation
 
