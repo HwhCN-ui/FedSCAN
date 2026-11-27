@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# Copyright (c) JLU, NODI, Huwenhan. All rights reserved.
+# Licensed under the Apache License, Version 2.0 (the "License");
+
 from datetime import datetime
 import os
 federated = {'num_clients': 20, 'num_rounds': 30, 'clients_per_round': 20, 'local_epochs': 1, 'batch_size': 128, 'num_workers': 4, 'prefetch_factor': 8, 'accumulation_steps': 1}

@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# Copyright (c) JLU, NODI, Huwenhan. All rights reserved.
+# Licensed under the Apache License, Version 2.0 (the "License");
+
 from .clip_dataload_utils import FederatedDataLoader, FederatedDataset
 from .vit_dataload_utils import FederatedClsDataLoader, FederatedClsDataset
 import json

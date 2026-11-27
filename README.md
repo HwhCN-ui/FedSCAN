@@ -1,5 +1,7 @@
 # FedSCAN
 
+English | [简体中文](README_zh-CN.md)
+
 **Spectral-Constrained Robust Aggregation for Secure LoRA-Based Federated Learning**
 KDD 2027 · [Paper](https://openreview.net/forum?id=YCna6pqYJk)
 
