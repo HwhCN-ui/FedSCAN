@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FedSCAN"
+version = "0.1.0"
+description = "Spectral-constrained aggregation for LoRA-based federated learning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Wenhan Hu"}, {name = "Zhe Wang"}, {name = "Rui Huang"}, {name = "Gang Yan"}]
+dependencies = ["torch", "numpy"]
+
+[project.optional-dependencies]
+training = ["torchvision", "transformers", "peft", "Pillow", "tqdm", "accelerate"]
+downloads = ["huggingface-hub", "modelscope"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fedscan*"]

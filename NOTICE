@@ -1,0 +1,12 @@
+FedSCAN
+Copyright (c) JLU, NODI, Huwenhan. All rights reserved.
+
+Derived Python modules were renamed from sma to fedscan, and their comments,
+docstrings, and debug print statements were removed. Original attribution is
+retained here. The original client and retrieval evaluator were adapted to
+remove simulation branches. The server was adapted to use FedSCAN with clean
+clients only. The aggregation numerical operations are retained from the source.
+
+Download scripts retain the original download sources and are scoped to their
+own directories. The CLIP model download helper and packaging metadata were
+added for this release.
